@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Perpustakaan Digital</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="perpus.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">📓 Perpustakaan</div>
+        <ul class="nav-menu">
+            <li><a style="color: white;" href="#beranda">Beranda</a></li>
+            <li><a style="color: white;" href="#buku">Data Buku</a></li>
+            <li><a style="color: white;" href="#peminjaman">Peminjaman</a></li>
+            <li><a style="color: white;" href="#akun">Akun</a></li>
+        </ul> 
+    </nav>
+
+    <!-- Beranda -->
+    <section id="beranda" class="section hero">
+        <h1>Perpustakaan Digital</h1>
+        <p>Solusi modern untuk mengelola data buku, peminjaman, dan pengembalian secara mudah dan efisien.</p>
+    </section>
+
+    <!-- Data Buku -->
+    <section id="buku" class="section">
+        <h2>📖 Data Buku</h2>
+
+        <!-- Search -->
+        <input type="text" id="searchInput" placeholder="Cari judul atau penulis...">
+
+        <!-- Daftar Buku -->
+        <div id="bookList" class="card-container"></div>
+    </section>
+
+    <!-- Peminjaman -->
+    <section id="peminjaman" class="section">
+        <h2>📝 Peminjaman Buku</h2>
+
+        <form id="loanForm" class="form-card">
+            <input type="text" id="borrowerName" placeholder="Nama Peminjam" required>
+            <input type="text" id="bookTitle" placeholder="Judul Buku" required>
+            <label>Tanggal Pinjam</label>
+            <input type="date" id="loanDate" required>
+            <label>Tanggal Kembali</label>
+            <input type="date" id="returnDate" required>
+            <button type="submit">Pinjam Buku</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Buku</th>
+                    <th>Pinjam</th>
+                    <th>Kembali</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="loanTable"></tbody>
+        </table>
+    </section>
+
+    <!-- Akun -->
+    <section id="akun" class="section">
+        <h2>👤 Akun Peminjam</h2>
+
+        <form id="accountForm" class="form-card">
+            <input type="text" id="name" placeholder="Nama Lengkap" required>
+            <input type="text" id="memberId" placeholder="Nomor Anggota" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <button type="submit">Buat Akun</button>
+        </form>
+
+        <ul id="accountList"></ul>
+    </section>
+
+    <!-- JS -->
+    <script src="pepus.js"></script>
+</body>
+</html>
